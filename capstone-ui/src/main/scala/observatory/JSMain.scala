@@ -22,7 +22,7 @@ object JSMain extends js.JSApp {
     setupMap(selectedLayer, selectedYear)
     val app =
       tags.div(
-        radioButtonElement,
+        //radioButtonElement,
         sliderElement,
         captionElement
       )
@@ -86,6 +86,7 @@ object JSMain extends js.JSApp {
         attrs.`type` := "range",
         attrs.min := yearBounds().min,
         attrs.max := yearBounds().max,
+        attrs.step := yearBounds().step,
         attrs.value := yearBounds().max,
         attrs.onchange := { (ev: Event) =>
           val input = ev.target.asInstanceOf[Input]
