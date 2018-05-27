@@ -8,6 +8,13 @@ package observatory
 case class Location(lat: Double, lon: Double)
 
 /**
+  * Weather stations are uniquely identified by the compound key (stn, wban)
+  * @param stn Station Number for the location
+  * @param wban Historical "Weather Bureau Air Force Navy" number
+  */
+case class Station(stn: String, wban: String)
+
+/**
   * Introduced in Week 3. Represents a tiled web map tile.
   * See https://en.wikipedia.org/wiki/Tiled_web_map
   * Based on http://wiki.openstreetmap.org/wiki/Slippy_map_tilenames
